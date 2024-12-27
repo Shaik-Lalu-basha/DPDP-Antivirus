@@ -1,0 +1,19 @@
+body {
+    background-image: url('images/background.jpg" "background-image');
+    /* Replace with the actual path to your image */
+    /* Specify background properties */
+    background-size: cover;
+    /* or contain, or auto, depending on your preference */
+    background-position: center center;
+    /* You can adjust this to position the image */
+    background-repeat: no-repeat;
+    /* Prevent the image from repeating */
+}
+
+
+/* You can also style other elements on your page as needed */
+
+h1 {
+    color: #333;
+    /* Set text color to contrast with the background */
+}

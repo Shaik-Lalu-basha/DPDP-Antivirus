@@ -1,0 +1,51 @@
+/* Reset default margin and padding */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Style for the sidebar section */
+
+.sidebar {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    color: #fff;
+}
+
+.sidebar-header {
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar-header h2 {
+    margin-bottom: 10px;
+}
+
+.sidebar-menu ul {
+    list-style-type: none;
+}
+
+.sidebar-menu ul li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #555;
+}
+
+.sidebar-menu ul li:last-child {
+    border-bottom: none;
+}
+
+.sidebar-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar-menu ul li a:hover {
+    background-color: #555;
+}

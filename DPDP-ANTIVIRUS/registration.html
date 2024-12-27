@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Registration</title>
+    <link rel="stylesheet" href="registrationCSS.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <form id="registrationForm" onsubmit="return registerAndRedirect()">
+            <div class="inp-grp">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="inp-grp">
+                <label for="middleName">Middle Name</label>
+                <input type="text" id="middleName" name="middleName">
+            </div>
+            <div class="inp-grp">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="inp-grp">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="inp-grp">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="inp-grp">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <div class="inp-grp">
+                <label for="mobileNumber">Mobile Number</label>
+                <input type="tel" id="mobileNumber" name="mobileNumber" pattern="[0-9]{10}" required>
+            </div>
+            <div class="inp-grp">
+                <button type="submit" class="register-button">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            // Client-side validation logic goes here
+            // You can use JavaScript to validate input fields before submitting the form
+
+            // Example: Checking if passwords match
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            // Add more validation logic as needed
+
+            return true; // Submit the form if validation passes
+        }
+
+        function registerAndRedirect() {
+            // Perform registration logic here
+            // You can use AJAX to send data to the server or redirect to a PHP file for server-side processing
+
+            // Assume registration is successful, display success message
+            registrationSuccessful();
+
+            // Redirect to lal.html after notification
+            setTimeout(function() {
+                window.location.href = 'app1.html';
+            }, 2000); // Redirect after 2 seconds (adjust as needed)
+
+            // Prevent the form from submitting (we handle the redirection manually)
+            return false;
+        }
+
+        function registrationSuccessful() {
+            alert("Registration Successful!");
+            // You can add further logic or UI updates for successful registration here
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download and Features</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Succesfully Download</h1>
+
+    <button id="downloadButton" onclick="downloadAndOpenFeatures()"><b>OPEN</b></button>
+
+    <script>
+        function downloadAndOpenFeatures() {
+            // You can add your download logic here, for example:
+            // window.location.href = 'path/to/your/app/download';
+
+            // Open a new window with additional features after download
+            var newWindow = window.open('index1.html', '_blank');
+            // Simulating download process
+            setTimeout(function() {
+                // Close the new window if needed
+                // newWindow.close();
+
+                // You can add additional code or features here
+            }, 2000); // You can adjust the timeout based on your actual download time
+        }
+    </script>
+</body>
+
+</html>

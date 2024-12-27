@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download App</title>
+</head>
+
+<body>
+
+    <button onclick="downloadApp()">Download WhatsApp</button>
+
+    <script>
+        function downloadApp() {
+            // Replace 'your-app-download-link' with the actual link to your app
+            const downloadLink = 'your-app-download-link';
+
+            // Create a link element
+            const link = document.createElement('a');
+
+            // Set the href attribute with the download link
+            link.href = downloadLink;
+
+            // Set the download attribute with the desired file name
+            link.download = 'http://127.0.0.1:5500/home.html';
+
+            // Append the link to the document body
+            document.body.appendChild(link);
+
+            // Trigger a click on the link to start the download
+            link.click();
+
+            // Remove the link from the document body
+            document.body.removeChild(link);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Pattern Detector</title>
+    <script>
+        function detectDarkPatterns() {
+            // Array of dark pattern indicators (element IDs, classes, attributes, etc.)
+            const darkPatternIndicators = [
+                'misdirection',
+                'hidden-costs',
+                'forced-action',
+                'sneak-into-basket'
+            ];
+
+            for (const indicator of darkPatternIndicators) {
+                const elements = document.querySelectorAll(`[class*="${indicator}"], [id*="${indicator}"], [data-*="${indicator}"]`);
+
+                if (elements.length > 0) {
+                    console.log(`Detected dark pattern indicator: ${indicator}`);
+                    return true;
+                }
+            }
+
+            console.log('No dark patterns detected.');
+            return false;
+        }
+
+        window.onload = function() {
+            detectDarkPatterns();
+        };
+    </script>
+</head>
+<body>
+
+    <!-- Example HTML with potential dark patterns -->
+    <div id="misdirection-example" class="misdirection">
+        This content may be an example of misdirection.
+    </div>
+
+    <div class="hidden-costs-example" data-dark-pattern="hidden-costs">
+        This content may involve hidden costs.
+    </div>
+
+    <button id="forced-action-example" data-dark-pattern="forced-action">
+        Clicking this button might trigger a forced action.
+    </button>
+
+    <div data-dark-pattern="sneak-into-basket">
+        This element may try to sneak items into the basket.
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Dark Pattern Demo - E-commerce</title> 
+<style> 
+body { 
+font-family: Arial, sans-serif; 
+} 
+    .product { 
+      width: 300px; 
+      margin: 50px auto; 
+      padding: 20px; 
+      border: 1px solid ccc; 
+      border-radius: 5px; 
+      text-align: center; 
+    } 
+    .hidden-text { 
+      display: none; 
+      color: red; 
+      font-size: 12px; 
+    } 
+    .fake-reviews { 
+      display: none; 
+      color: red; 
+      font-size: 12px; 
+    } 
+    #friendSpamPopup { 
+      display: none; 
+      position: fixed; 
+      top: 50%; 
+      left: 50%; 
+      transform: translate(-50%, -50%); 
+      padding: 20px; 
+      background: fff; 
+border: 1px solid ccc; 
+border-radius: 5px; 
+text-align: center; 
+} 
+#bas {
+    display:none;
+}
+</style> 
+</head> 
+<body> 
+<div class="product"> 
+<h2>Exclusive Limited-time Offer!</h2> 
+<p>This amazing product is now available for just $19.99! Act now, only 5 left in 
+stock!</p> 
+<button onclick="addToCart()">Add to Cart</button> 
+<p class="hidden-text">* Hidden: Additional charges may apply during checkout.</p> 
+<a href="" onclick="showFakeReviews()">Read Reviews</a> 
+</div> 
+<!-- Friend Spam Popup --> 
+<div class="subscribe-popup" id="friendSpamPopup"> 
+<p>Refer 5 friends to get an additional 10% off! Share now!</p> 
+<button onclick="closePopup('friendSpamPopup')">Close</button> 
+</div> 
+<!-- Fake Reviews Popup --> 
+<div class="subscribe-popup" id="fakeReviewsPopup"> 
+<p>Check out these amazing reviews from our customers!</p> 
+<p class="fake-reviews">1. "Best product ever!"</p> 
+<p class="fake-reviews">2. "Life-changing experience!"</p> 
+<button onclick="closePopup('fakeReviewsPopup')">Close</button> 
+</div> 
+<div id="consh">
+    <button onClick="shame()">BUY THE PRODUCT</button>
+</div>
+<div id="bas">
+    <li>Iphone 15 - 399</li>
+    <li>Iphone 15 Pro - 499 (Highly recommended, only for professionals)</li>
+    <li>Iphone 15 Pro Max - 549</li>
+</div>
+<input type="text" placeholder="Give us your phone number to contact">
+<p>99% of industry people use Iphone, it's your time (order now, pay later). Last 5 pieces left, hurry up</p>
+<p>Buy from us to get exclusive benefits!</p>
+<button onClick="bas()">BUY IPhone at $399 (only limited pieces)</button>
+<button onclick="uns()">Unsubscribe</button>
+<script> 
+function addToCart() { 
+alert('Product added to cart with its additional 1 year warranty. Visit your cart to check out.'); 
+} 
+function showFriendSpamPopup() { 
+document.getElementById('friendSpamPopup').style.display = 'block'; 
+} 
+function showFakeReviews() { 
+document.getElementById('fakeReviewsPopup').style.display = 'block'; 
+document.querySelector('.fake-reviews').style.display = 'block'; 
+} 
+function closePopup(popupId) { 
+document.getElementById(popupId).style.display = 'none'; 
+}
+function shame() {
+    let buy = confirm("Confirm to buy!")
+    if(buy == true) {
+        alert("Good job")
+    }
+    else {
+        alert("You lost a great offer")
+    }
+}
+function bas() {
+    document.querySelector('#bas').style.display = "block"
+}
+function uns() {
+    let con = confirm("Let us give you 80% discount!")
+    if(con == false) {
+    alert("Next step")
+    uns()
+    }
+}
+showFriendSpamPopup() 
+</script> 
+</body> 
+</html> 

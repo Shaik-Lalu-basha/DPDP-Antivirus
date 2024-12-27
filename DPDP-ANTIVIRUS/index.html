@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Patterns</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: skyblue;
+        }
+
+        header {
+            background-color: pink;
+            color: pink;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .download-button:hover {
+            background-color: #45a049;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            background-color: #f3f3f3;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .progress-bar {
+            width: 0;
+            height: 30px;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Placeholder for an icon -->
+    <img src="D:\nandhu FILE\images\background.jpg" alt="Your Icon" style="width: 100px; height: 100px;">
+
+    <header>
+        <h1>Dark Patterns</h1>
+    </header>
+
+    <section>
+        <h2>Welcome to Detecting & Prevention of Dark Patterns</h2>
+        <p>Protect your computer from malware, viruses, and other online threats with our powerful antivirus software.</p>
+        <button class="download-button" onclick="startDownload()">Download</button>
+        <div class="progress-bar-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar">0%</div>
+        </div>
+    </section>
+
+    <iframe src="https://bing.com" frameborder="0" width="100%" height="600" style="display: none;"></iframe>
+
+    <footer>
+        <p>&copy; 2024 My Dark Pattern Software. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function startDownload() {
+            const progressBar = document.getElementById('progressBar');
+            const progressContainer = document.getElementById('progressContainer');
+            let width = 0;
+            progressContainer.style.display = 'block';
+
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    window.location.href = "lal.html";
+                } else {
+                    width++;
+                    progressBar.style.width = width + '%';
+                    progressBar.textContent = width + '%';
+                }
+            }, 300); // 300ms interval for a 30 second progress bar
+        }
+    </script>
+</body>
+
+</html>
